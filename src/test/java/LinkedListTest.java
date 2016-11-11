@@ -20,6 +20,10 @@ public class LinkedListTest {
         ll.insertAfter(second, 5);
 
         ll.append(6);
+        ll.append(6);
+        ll.append(6);
+
+        ll.deleteAll(6);
 
         System.out.println("search: " + ll.searchKey(6));
         System.out.println("search neg: " + ll.searchKey(19));
