@@ -109,6 +109,36 @@ public class LinkedList {
         return searchKeyRec(this.head, key);
     }
 
+    /*public void insertionSort() {
+        Node n = this.head;
+        while (n != null) {
+            sortedInsert(n.data);
+            n = n.next;
+        }
+    }*/
+
+    public void sortedInsert(int data) {
+        Node newNode = new Node(data);
+        if (this.head == null) {
+            this.head = newNode;
+            return;
+        }
+        if (newNode.data < this.head.data) {
+            newNode.next = this.head;
+            this.head = newNode;
+            return;
+        }
+        Node n = this.head;
+        while (n.next != null && (newNode.data > n.next.data)) {
+            ;
+            n = n.next;
+        }
+        if (n.next != null) {
+            newNode.next = n.next;
+        }
+        n.next = newNode;
+    }
+
     public void printList() {
         Node n = this.head;
         while (n != null) {

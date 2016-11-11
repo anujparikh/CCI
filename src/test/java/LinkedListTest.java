@@ -31,4 +31,31 @@ public class LinkedListTest {
 
         ll.printList();
     }
+
+    @Test
+    public void sortedInsertTest() {
+        LinkedList ll = new LinkedList();
+        ll.head = new LinkedList.Node(2);
+        ll.append(2);
+        ll.append(3);
+        ll.append(5);
+        ll.append(6);
+        ll.sortedInsert(4);
+        ll.sortedInsert(1);
+        ll.sortedInsert(7);
+        ll.printList();
+    }
+
+    @Test
+    public void insertionTest() {
+        LinkedList ll = new LinkedList();
+        ll.head = new LinkedList.Node(2);
+        ll.append(5);
+        ll.append(3);
+        ll.append(6);
+        ll.append(4);
+        ll.append(8);
+//        ll.insertionSort();
+        ll.printList();
+    }
 }
