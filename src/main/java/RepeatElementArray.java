@@ -16,4 +16,17 @@ public class RepeatElementArray {
         }
         return -1;
     }
+
+    // given n
+    public int searchOneRepeatElementWithoutSpace(int[] inputArray, int n) {
+        int xor = inputArray[0];
+        int xor2 = 1;
+        for (int i = 1; i < inputArray.length; i++) {
+            xor ^= inputArray[i];
+        }
+        for (int i = 2; i <= n; i++) {
+            xor2 ^= i;
+        }
+        return (xor ^ xor2);
+    }
 }
