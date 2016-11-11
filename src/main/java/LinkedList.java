@@ -37,6 +37,78 @@ public class LinkedList {
         n.next = newNode;
     }
 
+    public void delete(int key) {
+        Node n = this.head;
+        if (n == null) {
+            return;
+        }
+
+        if (n.data == key) {
+            this.head = n.next;
+            return;
+        }
+
+        while (n.next.data != key) {
+            n = n.next;
+        }
+
+        if (n.next.next != null) {
+            n.next = n.next.next;
+        } else {
+            n.next = null;
+        }
+    }
+
+    public void deleteAll(int key) {
+        if (this.head == null)
+            return;
+        Node n = this.head;
+
+        /*while (n.data == key && this.head != null) {
+            if (n.next != null) {
+                this.head = n.next;
+                n = this.head;
+            } else {
+                this.head = null;
+            }
+        }
+
+        while (n.next != null) {
+            if (n.next.data == key) {
+                if (n.next.next != null) {
+                    n.next = n.next.next;
+                } else {
+                    n.next = null;
+                }
+            } else {
+                n = n.next;
+            }
+        }*/
+
+        while (n != null) {
+            delete(key);
+            n = n.next;
+        }
+    }
+
+    private int getCountRec(Node n) {
+        if (n == null)
+            return 0;
+        return 1 + getCountRec(n.next);
+    }
+
+    public int getCount() {
+        return getCountRec(this.head);
+    }
+
+    private boolean searchKeyRec(Node n, int key) {
+        return n != null && (n.data == key || searchKeyRec(n.next, key));
+    }
+
+    public boolean searchKey(int key) {
+        return searchKeyRec(this.head, key);
+    }
+
     public void printList() {
         Node n = this.head;
         while (n != null) {

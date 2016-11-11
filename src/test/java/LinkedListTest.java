@@ -8,7 +8,7 @@ public class LinkedListTest {
     @Test
     public void printListTest() {
         LinkedList ll = new LinkedList();
-        ll.head = new LinkedList.Node(1);
+        ll.head = new LinkedList.Node(6);
         LinkedList.Node second = new LinkedList.Node(2);
         LinkedList.Node third = new LinkedList.Node(3);
 
@@ -20,6 +20,10 @@ public class LinkedListTest {
         ll.insertAfter(second, 5);
 
         ll.append(6);
+
+        System.out.println("search: " + ll.searchKey(6));
+        System.out.println("search neg: " + ll.searchKey(19));
+        System.out.println("count: " + ll.getCount());
 
         ll.printList();
     }
