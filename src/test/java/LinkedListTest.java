@@ -69,4 +69,17 @@ public class LinkedListTest {
         ll.printList();
         System.out.println("Last nth data: " + ll.searchNthFromLastElement(6));
     }
+
+    @Test
+    public void addTwoLinkedList() {
+        LinkedList ll1 = new LinkedList();
+        ll1.head = new LinkedList.Node(3);
+        ll1.append(1);
+        ll1.append(5);
+        LinkedList ll2 = new LinkedList();
+        ll2.head = new LinkedList.Node(5);
+        ll2.append(9);
+        ll2.append(5);
+        new LinkedList().addTwoLL(ll1, ll2).printList();
+    }
 }

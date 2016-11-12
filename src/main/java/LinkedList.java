@@ -190,4 +190,35 @@ public class LinkedList {
             n = n.next;
         }
     }
+
+    public LinkedList addTwoLL(LinkedList ll1, LinkedList ll2) {
+        Node n1 = ll1.head;
+        Node n2 = ll2.head;
+        Node currentSumNode = null;
+        Node sumNode;
+        LinkedList finalOutput = new LinkedList();
+        int remainder = 0;
+
+        while (n1 != null) {
+            sumNode = new Node(n1.data + n2.data + remainder);
+            remainder = sumNode.data / 10;
+            sumNode.data = sumNode.data % 10;
+
+            if (n1 == ll1.head) {
+                finalOutput.head = sumNode;
+                currentSumNode = finalOutput.head;
+            } else {
+                currentSumNode.next = sumNode;
+                currentSumNode = currentSumNode.next;
+            }
+            n1 = n1.next;
+            n2 = n2.next;
+        }
+
+        if (remainder != 0) {
+            sumNode = new Node(remainder);
+            currentSumNode.next = sumNode;
+        }
+        return finalOutput;
+    }
 }
