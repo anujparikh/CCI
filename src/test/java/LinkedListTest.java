@@ -56,4 +56,17 @@ public class LinkedListTest {
 //        ll.insertionSort();
         ll.printList();
     }
+
+    @Test
+    public void searchNthTest() {
+        LinkedList ll = new LinkedList();
+        ll.head = new LinkedList.Node(2);
+        ll.append(5);
+        ll.append(3);
+        ll.append(6);
+        ll.append(4);
+        ll.append(8);
+        ll.printList();
+        System.out.println("Last nth data: " + ll.searchNthFromLastElement(6));
+    }
 }

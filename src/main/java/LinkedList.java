@@ -111,15 +111,17 @@ public class LinkedList {
         return searchKeyRec(this.head, key);
     }
 
-    // O(n^2) runtime
-    // O(1)   space complexity
+    /**
+     * O(n^2) runtime
+     * O(1)   space complexity
+     */
     public void removeDuplicate() {
         Node n = this.head;
         while (n != null) {
             Node innerNode = n;
             while (innerNode.next != null) {
                 if (n.data == innerNode.next.data) {
-                        innerNode.next = innerNode.next.next;
+                    innerNode.next = innerNode.next.next;
                 } else {
                     innerNode = innerNode.next;
                 }
@@ -128,8 +130,10 @@ public class LinkedList {
         }
     }
 
-    // O(n) runtime
-    // O(n) space complexity
+    /**
+     * O(n) runtime
+     * O(n)   space complexity
+     */
     public void removeDuplicateThroughHashTable() {
         Hashtable hashtable = new Hashtable();
         Node n = this.head;
@@ -164,6 +168,19 @@ public class LinkedList {
             newNode.next = n.next;
         }
         n.next = newNode;
+    }
+
+    public int searchNthFromLastElement(int n) {
+        Node valueNode = this.head;
+        Node currentNode = this.head;
+        for (int i = 0; i < n; i++) {
+            currentNode = currentNode.next;
+        }
+        while (currentNode != null) {
+            valueNode = valueNode.next;
+            currentNode = currentNode.next;
+        }
+        return valueNode.data;
     }
 
     public void printList() {
