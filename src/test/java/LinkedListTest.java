@@ -82,4 +82,30 @@ public class LinkedListTest {
         ll2.append(5);
         new LinkedList().addTwoLL(ll1, ll2).printList();
     }
+
+    @Test
+    public void searchFirstNodeInLoop() {
+        LinkedList ll = new LinkedList();
+        ll.head = new LinkedList.Node(3);
+        ll.append(1);
+        ll.append(5);
+        ll.append(8);
+        ll.printList();
+        System.out.println(ll.head.next.next.next.data + ": " + ll.head.data);
+        ll.head.next.next.next = ll.head;
+        System.out.println(ll.head.next.next.next.next.data + ": " + ll.head.data);
+        System.out.println(ll.searchFirstNodeInLoop().data);
+    }
+
+    @Test
+    public void deleteLastKeyTest() {
+        LinkedList ll = new LinkedList();
+        ll.head = new LinkedList.Node(3);
+        ll.append(1);
+        ll.append(5);
+        ll.append(5);
+        ll.append(8);
+        ll.deleteLastOccurrence(5);
+        ll.printList();
+    }
 }

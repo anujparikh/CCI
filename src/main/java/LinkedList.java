@@ -221,4 +221,35 @@ public class LinkedList {
         }
         return finalOutput;
     }
+
+    public Node searchFirstNodeInLoop() {
+        Hashtable hashtable = new Hashtable();
+        Node n = this.head;
+        while (n.next != null) {
+            if (hashtable.containsKey(n.next.data)) {
+                return n.next;
+            } else {
+                hashtable.put(n.next.data, true);
+            }
+        }
+        return null;
+    }
+
+    public void deleteLastOccurrence(int key) {
+        Node n = this.head;
+        Node lastToOneNode = null;
+        if (this.head.data == key) {
+            lastToOneNode = this.head;
+        }
+        while (n.next != null) {
+            if (n.next.data == key) {
+                lastToOneNode = n;
+            }
+            n = n.next;
+        }
+        if (lastToOneNode == null) {
+            return;
+        }
+        lastToOneNode.next = lastToOneNode.next.next;
+    }
 }
