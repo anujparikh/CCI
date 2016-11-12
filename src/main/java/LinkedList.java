@@ -109,13 +109,20 @@ public class LinkedList {
         return searchKeyRec(this.head, key);
     }
 
-    /*public void insertionSort() {
+    public void removeDuplicate() {
         Node n = this.head;
         while (n != null) {
-            sortedInsert(n.data);
+            Node innerNode = n;
+            while (innerNode.next != null) {
+                if (n.data == innerNode.next.data) {
+                        innerNode.next = innerNode.next.next;
+                } else {
+                    innerNode = innerNode.next;
+                }
+            }
             n = n.next;
         }
-    }*/
+    }
 
     public void sortedInsert(int data) {
         Node newNode = new Node(data);
