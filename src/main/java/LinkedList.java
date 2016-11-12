@@ -1,3 +1,5 @@
+import java.util.Hashtable;
+
 public class LinkedList {
     Node head;
 
@@ -109,6 +111,8 @@ public class LinkedList {
         return searchKeyRec(this.head, key);
     }
 
+    // O(n^2) runtime
+    // O(1)   space complexity
     public void removeDuplicate() {
         Node n = this.head;
         while (n != null) {
@@ -121,6 +125,22 @@ public class LinkedList {
                 }
             }
             n = n.next;
+        }
+    }
+
+    // O(n) runtime
+    // O(n) space complexity
+    public void removeDuplicateThroughHashTable() {
+        Hashtable hashtable = new Hashtable();
+        Node n = this.head;
+        hashtable.put(n.data, true);
+        while (n.next != null) {
+            if (hashtable.containsKey(n.next.data)) {
+                n.next = n.next.next;
+            } else {
+                hashtable.put(n.next.data, true);
+                n = n.next;
+            }
         }
     }
 

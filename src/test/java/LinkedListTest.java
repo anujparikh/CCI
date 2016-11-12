@@ -21,7 +21,7 @@ public class LinkedListTest {
         ll.append(6);
         ll.append(6);
 
-        ll.removeDuplicate();
+        ll.removeDuplicateThroughHashTable();
 
         System.out.println("search: " + ll.searchKey(6));
         System.out.println("search neg: " + ll.searchKey(19));
