@@ -252,4 +252,17 @@ public class LinkedList {
         }
         lastToOneNode.next = lastToOneNode.next.next;
     }
+
+    public void reverseLinkedList() {
+        Node current = this.head;
+        Node previous = null;
+        Node next = null;
+        while (current != null) {
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        this.head = previous;
+    }
 }

@@ -108,4 +108,19 @@ public class LinkedListTest {
         ll.deleteLastOccurrence(5);
         ll.printList();
     }
+
+    @Test
+    public void reverseLinkedListTest() {
+        LinkedList ll = new LinkedList();
+        ll.head = new LinkedList.Node(3);
+        ll.append(1);
+        ll.append(5);
+        ll.append(5);
+        ll.append(8);
+        System.out.println("Before: ");
+        ll.printList();
+        ll.reverseLinkedList();
+        System.out.println("After: ");
+        ll.printList();
+    }
 }
