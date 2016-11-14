@@ -37,7 +37,7 @@ public class Stack {
         return stackData[topIndex - 1];
     }
 
-    public boolean isEmpty() {
+    public boolean empty() {
         if (topIndex == 0) {
             return true;
         } else {

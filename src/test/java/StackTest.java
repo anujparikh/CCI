@@ -8,7 +8,7 @@ public class StackTest {
     @Test
     public void createStackAndPushTest() {
         Stack testStack = new Stack(10);
-        System.out.println("Is Stack Empty: " + testStack.isEmpty());
+        System.out.println("Is Stack Empty: " + testStack.empty());
         testStack.push(1);
         testStack.push(2);
         testStack.push(3);
@@ -17,7 +17,7 @@ public class StackTest {
         testStack.push(4);
         testStack.pop();
         System.out.println("Peep: " + testStack.peep());
-        System.out.println("Is Stack Empty: " + testStack.isEmpty());
+        System.out.println("Is Stack Empty: " + testStack.empty());
         testStack.printStack();
     }
 }
