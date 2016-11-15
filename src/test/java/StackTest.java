@@ -1,3 +1,4 @@
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -7,7 +8,7 @@ public class StackTest {
 
     @Test
     public void createStackAndPushTest() {
-        Stack testStack = new Stack(10);
+        Stack testStack = new Stack(Integer.class, 10);
         System.out.println("Is Stack Empty: " + testStack.empty());
         testStack.push(1);
         testStack.push(2);
@@ -19,5 +20,12 @@ public class StackTest {
         System.out.println("Peep: " + testStack.peep());
         System.out.println("Is Stack Empty: " + testStack.empty());
         testStack.printStack();
+    }
+
+    @Ignore
+    @Test
+    public void infixToPostfixTest() {
+        String testInput = "a+b*(c^d-e)^(f+g*h)-i";
+        Stack.infixToPostFix(testInput);
     }
 }
