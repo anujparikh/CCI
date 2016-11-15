@@ -3,10 +3,10 @@
  */
 public class ReverseString {
     public String reverseCStyleString(String input) {
-        String output = " ";
+        StringBuilder outputBuilder = new StringBuilder(" ");
         for (int i = input.length() - 1; i >= 0; i--) {
-            output += input.charAt(i);
+            outputBuilder.append(input.charAt(i));
         }
-        return output;
+        return outputBuilder.toString();
     }
 }
