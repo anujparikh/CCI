@@ -16,9 +16,9 @@ public class ReverseStackTest {
         input.push("c");
         input.push("d");
         input.push("e");
-        System.out.println("Before Stack: " + input);
+        System.out.println("Before CustomStack: " + input);
         testObject.reverseStack(input);
-        System.out.println("Stack: " + input);
+        System.out.println("CustomStack: " + input);
     }
 
 }

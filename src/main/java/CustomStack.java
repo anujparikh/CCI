@@ -5,13 +5,13 @@ import java.util.EmptyStackException;
  * Created by anujparikh on 11/12/16.
  */
 @SuppressWarnings("unchecked")
-public class Stack<E> {
+public class CustomStack<E> {
 
     private int capacity;
     private E[] stackData;
     private int topIndex;
 
-    Stack(Class<E> c, int capacity) {
+    CustomStack(Class<E> c, int capacity) {
         this.capacity = capacity;
         this.stackData = (E[]) Array.newInstance(c, capacity);
         this.topIndex = 0;
@@ -55,7 +55,7 @@ public class Stack<E> {
 
     public static String infixToPostFix(String inputExpression) {
         StringBuilder output = new StringBuilder(inputExpression);
-        Stack postFixStack = new Stack(Character.class, 10);
+        CustomStack postFixStack = new CustomStack(Character.class, 10);
         for (int i = 0; i < inputExpression.length(); i++) {
             char currentChar = inputExpression.charAt(i);
             if (isOperand(currentChar)) {

@@ -1,6 +1,6 @@
 import java.util.Hashtable;
 
-public class LinkedList {
+public class CustomLinkedList {
     Node head;
 
     static class Node {
@@ -191,12 +191,12 @@ public class LinkedList {
         }
     }
 
-    public LinkedList addTwoLL(LinkedList ll1, LinkedList ll2) {
+    public CustomLinkedList addTwoLL(CustomLinkedList ll1, CustomLinkedList ll2) {
         Node n1 = ll1.head;
         Node n2 = ll2.head;
         Node currentSumNode = null;
         Node sumNode;
-        LinkedList finalOutput = new LinkedList();
+        CustomLinkedList finalOutput = new CustomLinkedList();
         int remainder = 0;
 
         while (n1 != null) {

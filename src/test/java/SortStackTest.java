@@ -14,8 +14,8 @@ public class SortStackTest {
         input.push(3);
         input.push(4);
         input.push(2);
-        System.out.println("Original Stack: " + input);
+        System.out.println("Original CustomStack: " + input);
         java.util.Stack sortedStack = testObject.sort(input);
-        System.out.println("Sorted Stack: " + sortedStack);
+        System.out.println("Sorted CustomStack: " + sortedStack);
     }
 }

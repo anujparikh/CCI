@@ -3,14 +3,14 @@ import org.junit.Test;
 /**
  * Created by anujparikh on 11/9/16.
  */
-public class LinkedListTest {
+public class CustomLinkedListTest {
 
     @Test
     public void printListTest() {
-        LinkedList ll = new LinkedList();
-        ll.head = new LinkedList.Node(6);
-        LinkedList.Node second = new LinkedList.Node(2);
-        LinkedList.Node third = new LinkedList.Node(3);
+        CustomLinkedList ll = new CustomLinkedList();
+        ll.head = new CustomLinkedList.Node(6);
+        CustomLinkedList.Node second = new CustomLinkedList.Node(2);
+        CustomLinkedList.Node third = new CustomLinkedList.Node(3);
 
         ll.head.next = second;
         second.next = third;
@@ -32,8 +32,8 @@ public class LinkedListTest {
 
     @Test
     public void sortedInsertTest() {
-        LinkedList ll = new LinkedList();
-        ll.head = new LinkedList.Node(2);
+        CustomLinkedList ll = new CustomLinkedList();
+        ll.head = new CustomLinkedList.Node(2);
         ll.append(2);
         ll.append(3);
         ll.append(5);
@@ -46,8 +46,8 @@ public class LinkedListTest {
 
     @Test
     public void insertionTest() {
-        LinkedList ll = new LinkedList();
-        ll.head = new LinkedList.Node(2);
+        CustomLinkedList ll = new CustomLinkedList();
+        ll.head = new CustomLinkedList.Node(2);
         ll.append(5);
         ll.append(3);
         ll.append(6);
@@ -59,8 +59,8 @@ public class LinkedListTest {
 
     @Test
     public void searchNthTest() {
-        LinkedList ll = new LinkedList();
-        ll.head = new LinkedList.Node(2);
+        CustomLinkedList ll = new CustomLinkedList();
+        ll.head = new CustomLinkedList.Node(2);
         ll.append(5);
         ll.append(3);
         ll.append(6);
@@ -72,21 +72,21 @@ public class LinkedListTest {
 
     @Test
     public void addTwoLinkedList() {
-        LinkedList ll1 = new LinkedList();
-        ll1.head = new LinkedList.Node(3);
+        CustomLinkedList ll1 = new CustomLinkedList();
+        ll1.head = new CustomLinkedList.Node(3);
         ll1.append(1);
         ll1.append(5);
-        LinkedList ll2 = new LinkedList();
-        ll2.head = new LinkedList.Node(5);
+        CustomLinkedList ll2 = new CustomLinkedList();
+        ll2.head = new CustomLinkedList.Node(5);
         ll2.append(9);
         ll2.append(5);
-        new LinkedList().addTwoLL(ll1, ll2).printList();
+        new CustomLinkedList().addTwoLL(ll1, ll2).printList();
     }
 
     @Test
     public void searchFirstNodeInLoop() {
-        LinkedList ll = new LinkedList();
-        ll.head = new LinkedList.Node(3);
+        CustomLinkedList ll = new CustomLinkedList();
+        ll.head = new CustomLinkedList.Node(3);
         ll.append(1);
         ll.append(5);
         ll.append(8);
@@ -99,8 +99,8 @@ public class LinkedListTest {
 
     @Test
     public void deleteLastKeyTest() {
-        LinkedList ll = new LinkedList();
-        ll.head = new LinkedList.Node(3);
+        CustomLinkedList ll = new CustomLinkedList();
+        ll.head = new CustomLinkedList.Node(3);
         ll.append(1);
         ll.append(5);
         ll.append(5);
@@ -111,8 +111,8 @@ public class LinkedListTest {
 
     @Test
     public void reverseLinkedListTest() {
-        LinkedList ll = new LinkedList();
-        ll.head = new LinkedList.Node(3);
+        CustomLinkedList ll = new CustomLinkedList();
+        ll.head = new CustomLinkedList.Node(3);
         ll.append(1);
         ll.append(5);
         ll.append(5);

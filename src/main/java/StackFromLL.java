@@ -4,7 +4,7 @@ import java.util.EmptyStackException;
  * Created by anujparikh on 11/13/16.
  */
 
-// LIFO Stack
+// LIFO CustomStack
 public class StackFromLL {
 
     private Node head;
