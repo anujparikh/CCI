@@ -9,12 +9,13 @@ public class SortStackTest {
     public void whenInputIntStackReturnSortedStackTest() {
         SortStack testObject = new SortStack();
         java.util.Stack<Integer> input = new java.util.Stack<>();
+        input.push(5);
         input.push(1);
         input.push(3);
+        input.push(4);
         input.push(2);
-        input.push(6);
-        input.push(5);
-        testObject.getElementFromStack(input);
-        System.out.println("Stack: " + input);
+        System.out.println("Original Stack: " + input);
+        java.util.Stack sortedStack = testObject.sort(input);
+        System.out.println("Sorted Stack: " + sortedStack);
     }
 }

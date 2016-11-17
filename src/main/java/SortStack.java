@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 /**
  * Created by anujparikh on 11/17/16.
  */
@@ -23,5 +25,26 @@ public class SortStack {
             insertAtBottom(stack, data);
             stack.push(temp);
         }
+    }
+
+    public java.util.Stack<Integer> sort(Stack<Integer> input) {
+        Stack<Integer> outputStack = new Stack<>();
+        Stack<Integer> bufferStack = new Stack<>();
+        while (!input.isEmpty()) {
+            if (outputStack.isEmpty()) {
+                outputStack.push(input.pop());
+            } else if (input.peek() >= outputStack.peek()) {
+                outputStack.push(input.pop());
+            } else {
+                while (!outputStack.isEmpty() && input.peek() < outputStack.peek()) {
+                    bufferStack.push(outputStack.pop());
+                }
+                outputStack.push(input.pop());
+                while (!bufferStack.isEmpty()) {
+                    outputStack.push(bufferStack.pop());
+                }
+            }
+        }
+        return outputStack;
     }
 }
