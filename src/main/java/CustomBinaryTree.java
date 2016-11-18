@@ -2,13 +2,14 @@
  * Created by anujparikh on 11/18/16.
  */
 public class CustomBinaryTree {
+
     public static class Node {
         int key;
         Node left, right;
 
         public Node(int key) {
             this.key = key;
-            left = right = null;
+            this.left = this.right = null;
         }
     }
 
@@ -20,6 +21,25 @@ public class CustomBinaryTree {
 
     private CustomBinaryTree() {
         root = null;
+    }
+
+    public int diameter(Node root) {
+        if (root == null) return 0;
+        int lheight = height(root.left);
+        int rheight = height(root.right);
+
+        int ldiameter = diameter(root.left);
+        int rdiameter = diameter(root.right);
+
+        return Math.max((1 + lheight + rheight), Math.max(ldiameter, rdiameter));
+
+    }
+
+    public int height(Node node) {
+        if (node == null) {
+            return 0;
+        }
+        return (1 + Math.max(height(node.left), height(node.right)));
     }
 
     // Left -> Root -> Right

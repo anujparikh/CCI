@@ -12,6 +12,8 @@ public class CustomBinaryTreeTest {
         inputBinaryTree.root.right = new CustomBinaryTree.Node(3);
         inputBinaryTree.root.left.left = new CustomBinaryTree.Node(4);
         inputBinaryTree.root.left.right = new CustomBinaryTree.Node(5);
+        System.out.println("Height: " + inputBinaryTree.height(inputBinaryTree.root));
+        System.out.println("Diameter: " + inputBinaryTree.diameter(inputBinaryTree.root));
         System.out.println("Inorder Traversal Left -> Root -> Right");
         inputBinaryTree.inorderTraversalPrint();
         System.out.println();
