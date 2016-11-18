@@ -32,7 +32,6 @@ public class CustomBinaryTree {
         int rdiameter = diameter(root.right);
 
         return Math.max((1 + lheight + rheight), Math.max(ldiameter, rdiameter));
-
     }
 
     public int height(Node node) {
