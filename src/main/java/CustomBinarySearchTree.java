@@ -51,6 +51,7 @@ public class CustomBinarySearchTree {
         return node;
     }
 
+    // http://quiz.geeksforgeeks.org/binary-search-tree-set-2-delete/
     public Node delete(Node node, int key) {
         if (node.key == key) {
             if (node.left == null && node.right == null) {
@@ -80,5 +81,12 @@ public class CustomBinarySearchTree {
             return node;
         }
         return minimum(node.left);
+    }
+
+    public void printInOrderTraversal(Node node) {
+        if (node == null) return;
+        printInOrderTraversal(node.left);
+        System.out.print(node.key + " ");
+        printInOrderTraversal(node.right);
     }
 }

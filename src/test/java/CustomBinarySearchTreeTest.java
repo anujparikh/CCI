@@ -83,6 +83,8 @@ public class CustomBinarySearchTreeTest {
         System.out.println("Root Right: " + testObject.root.right.key);
         System.out.println("Root Right Left: " + testObject.root.right.left.key);
         System.out.println("Root Right Right: " + testObject.root.right.right.key);
+        System.out.println("InOrder Traversal: ");
+        testObject.printInOrderTraversal(testObject.root);
         testObject.delete(testObject.root, 50);
         System.out.println("************after*************");
         System.out.println("Root: " + testObject.root.key);
@@ -90,5 +92,7 @@ public class CustomBinarySearchTreeTest {
         System.out.println("Root Right: " + testObject.root.right.key);
         System.out.println("Root Right Left: " + testObject.root.right.left);
         System.out.println("Root Right Right: " + testObject.root.right.right.key);
+        System.out.println("InOrder Traversal: ");
+        testObject.printInOrderTraversal(testObject.root);
     }
 }
