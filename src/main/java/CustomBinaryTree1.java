@@ -17,6 +17,20 @@ public class CustomBinaryTree1 {
         }
     }
 
+    public void nodesAtInputDistance(Node node, int distance) {
+
+        if (node == null) {
+            return;
+        }
+
+        if (distance == 0) {
+            System.out.println("Node at distance: " + node.key);
+        }
+
+        nodesAtInputDistance(node.left, distance - 1);
+        nodesAtInputDistance(node.right, distance - 1);
+    }
+
 
     // Inorder: D B E A F C
     // Preorder: A B D E C F
@@ -44,5 +58,7 @@ public class CustomBinaryTree1 {
         System.out.println(testObject.root.left.left.key);
         System.out.println(testObject.root.left.right.key);
         System.out.println(testObject.root.right.left.key);
+
+        testObject.nodesAtInputDistance(testObject.root, 2);
     }
 }
