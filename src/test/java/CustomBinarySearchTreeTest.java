@@ -1,3 +1,4 @@
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -94,5 +95,24 @@ public class CustomBinarySearchTreeTest {
         System.out.println("Root Right Right: " + testObject.root.right.right.key);
         System.out.println("InOrder Traversal: ");
         testObject.printInOrderTraversal(testObject.root);
+    }
+
+    @Ignore
+    @Test
+    public void whenInsertMultipleKeysCreateBSTAndCheckInorderPredecessor() {
+        CustomBinarySearchTree testObject = new CustomBinarySearchTree();
+        testObject.insert(8);
+        testObject.insert(3);
+        testObject.insert(10);
+        testObject.insert(9);
+        testObject.insert(1);
+        testObject.insert(6);
+        testObject.insert(4);
+        testObject.insert(7);
+        testObject.insert(14);
+        testObject.insert(13);
+        testObject.printInOrderTraversal(testObject.root);
+        System.out.println("\nInOrder Traversal of 4: ");
+        //testObject.printInorderPredecessor(testObject.root, 4);
     }
 }

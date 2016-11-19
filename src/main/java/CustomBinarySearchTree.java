@@ -76,6 +76,35 @@ public class CustomBinarySearchTree {
         return node;
     }
 
+    /*public void printInorderPredecessor(Node node, int key) {
+        if (node == null) return;
+        if (node.key == key) {
+            if (node.left != null) {
+                System.out.println("Predecessor: " + getRightMostChild(node.left).key);
+            } else {
+                System.out.println("Predecessor: " + node.key);
+            }
+            if (node.right != null) {
+                System.out.println("Successor: " + minimum(node.right).key);
+            } else {
+                System.out.println("Successor: " + node.key);
+            }
+        } else {
+            if (node.key > key) {
+                printInorderPredecessor(node.left, key);
+            } else {
+                printInorderPredecessor(node.right, key);
+            }
+        }
+    }*/
+
+    public Node getRightMostChild(Node node) {
+        if (node.right == null) {
+            return node;
+        }
+        return getRightMostChild(node.right);
+    }
+
     public Node minimum(Node node) {
         if (node.left == null) {
             return node;
