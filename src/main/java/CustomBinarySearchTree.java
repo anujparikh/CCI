@@ -50,4 +50,35 @@ public class CustomBinarySearchTree {
         }
         return node;
     }
+
+    public Node delete(Node node, int key) {
+        if (node.key == key) {
+            if (node.left == null && node.right == null) {
+                return null;
+            } else {
+                if (node.left != null && node.right != null) {
+                    node.key = minimum(node.right).key;
+                    delete(node.right, node.key);
+                } else if (node.left != null) {
+                    return node.left;
+                } else {
+                    return node.right;
+                }
+            }
+        } else {
+            if (node.key > key) {
+                node.left = delete(node.left, key);
+            } else {
+                node.right = delete(node.right, key);
+            }
+        }
+        return node;
+    }
+
+    public Node minimum(Node node) {
+        if (node.left == null) {
+            return node;
+        }
+        return minimum(node.left);
+    }
 }
