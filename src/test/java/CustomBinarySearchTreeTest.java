@@ -139,4 +139,18 @@ public class CustomBinarySearchTreeTest {
         testObject.root.right = new CustomBinarySearchTree.Node(5);
         System.out.println("Valid BST: " + testObject.checkForValidBinarySearchTree(testObject.root));
     }
+
+    @Test
+    public void whenInputBSTAndTwoKeysGetLCA() {
+        CustomBinarySearchTree testObject = new CustomBinarySearchTree(20);
+        testObject.root.left = new CustomBinarySearchTree.Node(8);
+        testObject.root.left.left = new CustomBinarySearchTree.Node(4);
+        testObject.root.left.right = new CustomBinarySearchTree.Node(12);
+        testObject.root.left.right.left = new CustomBinarySearchTree.Node(10);
+        testObject.root.left.right.right = new CustomBinarySearchTree.Node(14);
+        testObject.root.right = new CustomBinarySearchTree.Node(22);
+        System.out.println("Inorder Traversal: ");
+        testObject.printInOrderTraversal(testObject.root);
+        System.out.println("\nLCA: " + testObject.findLCA(testObject.root, 4, 10).key);
+    }
 }

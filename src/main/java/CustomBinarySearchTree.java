@@ -14,13 +14,16 @@ public class CustomBinarySearchTree {
     }
 
     Node root;
+    Node lca;
 
     CustomBinarySearchTree(int key) {
         this.root = new Node(key);
+        this.lca = this.root;
     }
 
     CustomBinarySearchTree() {
         this.root = null;
+        this.lca = null;
     }
 
     public boolean contains(Node node, int key) {
@@ -129,5 +132,17 @@ public class CustomBinarySearchTree {
         if (node.key < min || node.key > max) return false;
 
         return isBSTUtil(node.left, min, node.key - 1) && isBSTUtil(node.right, node.key + 1, max);
+    }
+
+    public Node findLCA(Node node, int n1, int n2) {
+        if (node == null) return lca;
+        if (node.key == n1 || node.key == n2) return lca;
+        if (contains(node.left, n1) && contains(node.left, n2)) lca = node.left;
+        if (contains(node.right, n1) && contains(node.right, n2)) lca = node.right;
+        if (contains(node.left, n1) && contains(node.right, n2)) {
+            lca = node;
+            return lca;
+        }
+        return findLCA(lca, n1, n2);
     }
 }
