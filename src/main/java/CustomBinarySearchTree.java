@@ -118,4 +118,16 @@ public class CustomBinarySearchTree {
         System.out.print(node.key + " ");
         printInOrderTraversal(node.right);
     }
+
+    public boolean checkForValidBinarySearchTree(Node node) {
+        return isBSTUtil(node, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    }
+
+    private boolean isBSTUtil(Node node, Integer min, Integer max) {
+        if (node == null) return true;
+
+        if (node.key < min || node.key > max) return false;
+
+        return isBSTUtil(node.left, min, node.key - 1) && isBSTUtil(node.right, node.key + 1, max);
+    }
 }

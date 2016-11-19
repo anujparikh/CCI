@@ -7,7 +7,7 @@ import org.junit.Test;
 public class CustomBinarySearchTreeTest {
 
     @Test
-    public void whenInputKeyCheckBST() {
+    public void whenInputKeyCheckBSTAndReturnTrue() {
         CustomBinarySearchTree testObject = new CustomBinarySearchTree(8);
         testObject.root.left = new CustomBinarySearchTree.Node(3);
         testObject.root.right = new CustomBinarySearchTree.Node(10);
@@ -114,5 +114,29 @@ public class CustomBinarySearchTreeTest {
         testObject.printInOrderTraversal(testObject.root);
         System.out.println("\nInOrder Traversal of 4: ");
         //testObject.printInorderPredecessor(testObject.root, 4);
+    }
+
+    @Test
+    public void checkForValidBSTTest() {
+        CustomBinarySearchTree testObject = new CustomBinarySearchTree(8);
+        testObject.root.left = new CustomBinarySearchTree.Node(3);
+        testObject.root.right = new CustomBinarySearchTree.Node(10);
+        testObject.root.left.left = new CustomBinarySearchTree.Node(1);
+        testObject.root.left.right = new CustomBinarySearchTree.Node(6);
+        testObject.root.left.right.left = new CustomBinarySearchTree.Node(4);
+        testObject.root.left.right.right = new CustomBinarySearchTree.Node(7);
+        testObject.root.right.right = new CustomBinarySearchTree.Node(14);
+        testObject.root.right.right.left = new CustomBinarySearchTree.Node(13);
+        System.out.println("Valid BST: " + testObject.checkForValidBinarySearchTree(testObject.root));
+    }
+
+    @Test
+    public void checkForValidBSTTest2() {
+        CustomBinarySearchTree testObject = new CustomBinarySearchTree(3);
+        testObject.root.left = new CustomBinarySearchTree.Node(2);
+        testObject.root.left.left = new CustomBinarySearchTree.Node(1);
+        testObject.root.left.right = new CustomBinarySearchTree.Node(4);
+        testObject.root.right = new CustomBinarySearchTree.Node(5);
+        System.out.println("Valid BST: " + testObject.checkForValidBinarySearchTree(testObject.root));
     }
 }
