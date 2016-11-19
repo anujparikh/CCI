@@ -17,6 +17,9 @@ public class CustomBinarySearchTreeTest {
         testObject.root.right.right = new CustomBinarySearchTree.Node(14);
         testObject.root.right.right.left = new CustomBinarySearchTree.Node(13);
 
-        System.out.println(testObject.contains(testObject.root, 13));
+        System.out.println("Contains 13: " + testObject.contains(testObject.root, 13));
+
+        testObject.insert(testObject.root, 15);
+        System.out.println(testObject.root.right.right.right.key);
     }
 }

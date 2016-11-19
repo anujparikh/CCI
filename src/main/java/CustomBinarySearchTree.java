@@ -32,10 +32,18 @@ public class CustomBinarySearchTree {
             return true;
         }
 
-        if (node.key > key) {
-            return contains(node.left, key);
-        } else {
-            return contains(node.right, key);
+        return node.key > key ? contains(node.left, key) : contains(node.right, key);
+    }
+
+    public Node insert(Node node, int key) {
+        if (node == null) {
+            return new Node(key);
         }
+        if (node.key < key) {
+            node.right = insert(node.right, key);
+        } else {
+            node.left = insert(node.left, key);
+        }
+        return node;
     }
 }
