@@ -35,6 +35,10 @@ public class CustomBinarySearchTree {
         return node.key > key ? contains(node.left, key) : contains(node.right, key);
     }
 
+    public void insert(int key) {
+        this.root = insert(this.root, key);
+    }
+
     public Node insert(Node node, int key) {
         if (node == null) {
             return new Node(key);

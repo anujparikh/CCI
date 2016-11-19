@@ -22,4 +22,25 @@ public class CustomBinarySearchTreeTest {
         testObject.insert(testObject.root, 15);
         System.out.println(testObject.root.right.right.right.key);
     }
+
+    @Test
+    public void whenInsertMultipleKeysCreateBST() {
+        CustomBinarySearchTree testObject = new CustomBinarySearchTree();
+        testObject.insert(8);
+        testObject.insert(3);
+        testObject.insert(10);
+        testObject.insert(1);
+        testObject.insert(6);
+        testObject.insert(4);
+        testObject.insert(7);
+        testObject.insert(14);
+        testObject.insert(13);
+        System.out.println("Root: " + testObject.root.key);
+        System.out.println("Root Left: " + testObject.root.left.key);
+        System.out.println("Root Right: " + testObject.root.right.key);
+        System.out.println("Root Left Left: " + testObject.root.left.left.key);
+        System.out.println("Root Left Right: " + testObject.root.left.right.key);
+        System.out.println("Root Left Right Left: " + testObject.root.left.right.left.key);
+        System.out.println("Root Left Right Right: " + testObject.root.left.right.right.key);
+    }
 }
