@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * Created by anujparikh on 11/19/16.
  */
@@ -79,25 +81,55 @@ public class CustomBinarySearchTree {
         return node;
     }
 
-    /*public void printInorderPredecessor(Node node, int key) {
+    public int ceilInBSTForKey(Node node, int key) {
+
+        if (node == null) {
+            return -1;
+        }
+
+        if (node.key == key) {
+            return node.key;
+        }
+
+        if (node.key < key) {
+            return ceilInBSTForKey(node.right, key);
+        }
+
+        int ceil = ceilInBSTForKey(node.left, key);
+        return (ceil >= key) ? ceil : node.key;
+    }
+
+    public Node createBSTFromDLL(int[] input) {
+        if (input.length == 0) {
+            return null;
+        }
+        if (input.length == 1) {
+            return new Node(input[0]);
+        }
+        int middleIndex = (int) Math.ceil(input.length / 2);
+        int key = input[middleIndex];
+        Node node = new Node(key);
+        node.left = createBSTFromDLL(Arrays.copyOfRange(input, 0, middleIndex));
+        node.right = createBSTFromDLL(Arrays.copyOfRange(input, middleIndex + 1, input.length));
+        return node;
+    }
+
+    /*public void printInorderPredecessor(Node node, Node predecessor, int key) {
         if (node == null) return;
         if (node.key == key) {
             if (node.left != null) {
-                System.out.println("Predecessor: " + getRightMostChild(node.left).key);
-            } else {
-                System.out.println("Predecessor: " + node.key);
+                if (node.left.right != null) {
+                    predecessor = getRightMostChild(node.left);
+                } else {
+                    predecessor = node.left;
+                }
             }
-            if (node.right != null) {
-                System.out.println("Successor: " + minimum(node.right).key);
-            } else {
-                System.out.println("Successor: " + node.key);
-            }
-        } else {
-            if (node.key > key) {
-                printInorderPredecessor(node.left, key);
-            } else {
-                printInorderPredecessor(node.right, key);
-            }
+            return;
+        }
+
+        if (node.key < key) {
+            predecessor = node;
+            printInorderPredecessor(node.right, predecessor, key);
         }
     }*/
 

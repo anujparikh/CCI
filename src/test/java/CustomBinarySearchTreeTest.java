@@ -153,4 +153,44 @@ public class CustomBinarySearchTreeTest {
         testObject.printInOrderTraversal(testObject.root);
         System.out.println("\nLCA: " + testObject.findLCA(testObject.root, 4, 10).key);
     }
+
+    @Test
+    public void whenInputBSTAndTwoKeysGetCeilForNumber() {
+        CustomBinarySearchTree testObject = new CustomBinarySearchTree(20);
+        testObject.root.left = new CustomBinarySearchTree.Node(8);
+        testObject.root.left.left = new CustomBinarySearchTree.Node(4);
+        testObject.root.left.right = new CustomBinarySearchTree.Node(12);
+        testObject.root.left.right.left = new CustomBinarySearchTree.Node(10);
+        testObject.root.left.right.right = new CustomBinarySearchTree.Node(14);
+        System.out.println("Inorder Traversal: ");
+        System.out.println("Ceil for 11: " + testObject.ceilInBSTForKey(testObject.root, 11));
+        System.out.println("Ceil for 14: " + testObject.ceilInBSTForKey(testObject.root, 14));
+        System.out.println("Ceil for 8: " + testObject.ceilInBSTForKey(testObject.root, 8));
+        System.out.println("Ceil for 2: " + testObject.ceilInBSTForKey(testObject.root, 2));
+    }
+
+    @Test
+    public void createBSTFromInputIntArray1() {
+        CustomBinarySearchTree testObject = new CustomBinarySearchTree();
+        int[] input = {1, 2, 3, 4, 5, 6, 7};
+        testObject.root = testObject.createBSTFromDLL(input);
+        System.out.println("Root: " + testObject.root.key);
+        System.out.println("Root Left: " + testObject.root.left.key);
+        System.out.println("Root Right: " + testObject.root.right.key);
+        System.out.println("Root Left Left: " + testObject.root.left.left.key);
+        System.out.println("Root Left Right: " + testObject.root.left.right.key);
+        System.out.println("Root Right Left: " + testObject.root.right.left.key);
+        System.out.println("Root Right Right: " + testObject.root.right.right.key);
+    }
+
+    @Test
+    public void createBSTFromInputIntArray() {
+        CustomBinarySearchTree testObject = new CustomBinarySearchTree();
+        int[] input = {1, 2, 3, 4};
+        testObject.root = testObject.createBSTFromDLL(input);
+        System.out.println("Root: " + testObject.root.key);
+        System.out.println("Root Left: " + testObject.root.left.key);
+        System.out.println("Root Right: " + testObject.root.right.key);
+        System.out.println("Root Left Left: " + testObject.root.left.left.key);
+    }
 }
