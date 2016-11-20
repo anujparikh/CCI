@@ -114,6 +114,10 @@ public class CustomBinarySearchTree {
         return node;
     }
 
+    public void findPairEqualToInputTarget(Node node1, Node node2, int target) {
+
+    }
+
     /*public void printInorderPredecessor(Node node, Node predecessor, int key) {
         if (node == null) return;
         if (node.key == key) {
