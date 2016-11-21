@@ -20,4 +20,11 @@ public class CustomBinaryHeapTest {
         testObject.printMinHeap();
         System.out.println("**********************");
     }
+
+    @Test
+    public void createMinBinaryHeapTest() {
+        int[] input = {3, 1, 6, 5, 2, 4};
+        CustomBinaryHeap testObject = new CustomBinaryHeap(input, 10);
+        testObject.printMinHeap();
+    }
 }

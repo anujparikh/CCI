@@ -12,6 +12,16 @@ public class CustomBinaryHeap {
         this.size = 0;
     }
 
+    CustomBinaryHeap(int[] inputArray, int capacity) {
+        this.capacity = capacity;
+        this.keyArray = new int[this.capacity];
+        this.size = 0;
+
+        for (int i = 0; i < inputArray.length; i++) {
+            insert(inputArray[i]);
+        }
+    }
+
     public void swap(int[] input, int i, int j) {
         int temp = input[i];
         input[i] = input[j];
@@ -53,7 +63,6 @@ public class CustomBinaryHeap {
             swap(keyArray, min, i);
             minHeapify(min);
         }
-
     }
 
     public void insert(int key) {
