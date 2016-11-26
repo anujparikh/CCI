@@ -17,7 +17,9 @@ public class LongestValidSubString {
             } else if (input.charAt(i) == ')' && !inputStack.isEmpty()) {
                 if (inputStack.pop() == '(') {
                     counter += 2;
-                    largest = counter;
+                    if (counter > largest) {
+                        largest = counter;
+                    }
                 } else {
                     counter = 0;
                 }
