@@ -63,17 +63,17 @@ public class CustomBinaryTree1 {
 
     // Inorder: D B E A F C
     // Preorder: A B D E C F
-    public Node buildTree(String inorderInput, String preorderInput) {
+    public Node buildTree(String inorderInput, String preOrderInput) {
         inorderInput = inorderInput.replace(" ", "");
-        preorderInput = preorderInput.replace(" ", "");
+        preOrderInput = preOrderInput.replace(" ", "");
         if (inorderInput.isEmpty()) {
             return null;
         }
-        Character key = preorderInput.charAt(preIndex++);
+        Character key = preOrderInput.charAt(preIndex++);
         Node tNode = new Node(key);
         int inIndex = inorderInput.indexOf(key);
-        tNode.left = buildTree(inorderInput.substring(0, inIndex), preorderInput);
-        tNode.right = buildTree(inorderInput.substring(inIndex + 1), preorderInput);
+        tNode.left = buildTree(inorderInput.substring(0, inIndex), preOrderInput);
+        tNode.right = buildTree(inorderInput.substring(inIndex + 1), preOrderInput);
 
         return tNode;
     }
