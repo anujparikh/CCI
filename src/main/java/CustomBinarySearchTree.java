@@ -179,6 +179,10 @@ public class CustomBinarySearchTree {
             lca = node;
             return lca;
         }
+        if (contains(node.left, n2) && contains(node.right, n1)) {
+            lca = node;
+            return lca;
+        }
         return findLCA(lca, n1, n2);
     }
 }
